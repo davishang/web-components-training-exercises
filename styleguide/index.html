@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +10,7 @@
     <link href="vendor/docs.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">
     <style>.navbar-brand { font-size: 250%; line-height: 1.2; margin: 20px 0; }</style>
-
+    <link rel="import" href="Components/my-first-web-component/my-first-web-component.html">
 </head>
 <body>
 
@@ -40,13 +39,19 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquam amet culpa dolores hic itaque magni minima minus mollitia nemo nulla numquam odit provident, quidem ratione rem tempora ullam vitae.</p>
                 </div>
                 <!-- Component title -->
-                <h2 id="first-component">First Component</h2>
+                <h2 id="hello-badge">Hello Badge</h2>
                 <!-- Component description -->
-                <p>Notes about the.</p>
+                <p>Creates a Hello badge.</p>
                 <!-- Component code -->
-                <h3 style="color: red;">Hello world.</h3>
+               <my-badge>
+David Hang
+               </my-badge>
                 <!-- Component code example -->
-                <div class="highlight"><code class="html"><h3 style="color: red;">Hello world.</h3></code></div>
+                <div class="highlight"><code class="html">
+                    <my-badge>
+
+                    </my-badge>
+                </code></div>
 
                 <!-- Component title -->
                 <h2 id="second-component">Second Component</h2>
@@ -93,16 +98,14 @@
 </footer>
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
 <script>
-
-function escapeHtml(str) {
-var div = document.createElement('div');
-div.appendChild(document.createTextNode(str));
-return div.innerHTML;
-};
-
-var codeNodes = Array.prototype.slice.call(document.querySelectorAll('code'));
-codeNodes.forEach(function(el) { el.innerHTML = escapeHtml(el.innerHTML); });
-codeNodes.forEach(function(el) { hljs.highlightBlock(el); });
+    function escapeHtml(str) {
+        var div = document.createElement('div');
+        div.appendChild(document.createTextNode(str));
+        return div.innerHTML;
+    };
+    var codeNodes = Array.prototype.slice.call(document.querySelectorAll('code'));
+    codeNodes.forEach(function(el) { el.innerHTML = escapeHtml(el.innerHTML); });
+    codeNodes.forEach(function(el) { hljs.highlightBlock(el); });
 </script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
